@@ -1,10 +1,10 @@
 <div align="center">
-  <img src="api/static/images/logos/logo.png" alt="YumeAnime Logo" width="200">
-  <h1>YumeAnime</h1>
+  <img src="api/static/images/logos/logo.png" alt="Chanime Logo" width="200">
+  <h1>Chanime</h1>
   <p><strong>Your Ultimate Ad-Free Anime Streaming Experience</strong></p>
   
   <p>
-    <a href="https://yume-animez.vercel.app/home"><strong>⛩️ YumeAnime</strong></a>
+    <a href="https://yume-animez.vercel.app/home"><strong>⛩️ Chanime</strong></a>
   </p>
 
   <p>
@@ -19,7 +19,7 @@
 
 ## 📖 Introduction
 
-**YumeAnime** is a highly polished, feature-rich anime streaming platform built for fans who want a seamless, ad-free viewing experience. It hooks into AniList and MyAnimeList and utilizes Miruro API to provide a comprehensive anime library wrapped in a gorgeous Glassmorphism user interface. 
+**Chanime** is a highly polished, feature-rich anime streaming platform built for fans who want a seamless, ad-free viewing experience. It hooks into AniList and MyAnimeList and utilizes Miruro API to provide a comprehensive anime library wrapped in a gorgeous Glassmorphism user interface. 
 
 Our focus is entirely on usability, speed, and cross-platform consistency.
 
@@ -49,12 +49,12 @@ Our focus is entirely on usability, speed, and cross-platform consistency.
 
 ## 🚀 Installation & Local Development
 
-Ready to run YumeAnime locally? Follow these steps:
+Ready to run Chanime locally? Follow these steps:
 
 1. **Clone the Repository**
     ```bash
-    git clone https://github.com/OTAKUWeBer/YumeAnime
-    cd YumeAnime
+    git clone https://github.com/OTAKUWeBer/Chanime
+    cd Chanime
     ```
 
 2. **Create a Virtual Environment**

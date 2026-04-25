@@ -8,11 +8,11 @@
         content="{% block meta_description %}Watch anime online for free in HD quality{% endblock %}">
 
     <!-- Open Graph / Social Media Embeds -->
-    <meta property="og:title" content="{% block og_title %}YumeAnime - Watch Anime Online{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Chanime - Watch Anime Online{% endblock %}">
     <meta property="og:description"
         content="{% block og_description %}Watch the latest anime online for free in HD. Discover trending, popular, and new anime series.{% endblock %}">
 
-    <title>{% block title %}YumeAnime{% endblock %}</title>
+    <title>{% block title %}Chanime{% endblock %}</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/logo-icon.png') }}?v=3">
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ url_for('static', filename='images/logos/logo-icon.png') }}?v=3">
@@ -71,15 +71,13 @@
                         <line x1="3" y1="18" x2="21" y2="18" />
                     </svg>
                 </button>
-
                 <!-- Brand -->
                 <a href="{{ url_for('home_routes.home') }}" class="navbar-brand">
                     <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="YumeAnime Logo"
                         style="height: 40px;">
-                    <span>YumeAnime</span>
+                    <span>Chanime</span>
                 </a>
             </div>
-
             <!-- Search (Centered) -->
             <div class="search-container">
                 {% set is_manga_page = '/manga' in request.path %}
@@ -234,9 +232,15 @@
     <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
+<<<<<<< HEAD:api/templates/shared/base.html
             <a href="{{ url_for('home_routes.home') }}" class="sidebar-brand">
                 <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="YumeAnime Logo">
                 <span>YumeAnime</span>
+=======
+            <a href="{{ url_for('main.home_routes.home') }}" class="sidebar-brand">
+                <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="Chanime Logo">
+                <span>Chanime</span>
+>>>>>>> dcf8a09 (Save my progress before update):api/templates/base.html
             </a>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -302,14 +306,6 @@
             </a>
             {% endif %}
             <div class="sidebar-divider"></div>
-            <a href="https://github.com/OTAKUWeBer/YumeAnime" target="_blank" class="sidebar-link">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                </svg>
-                <span>GitHub</span>
-            </a>
         </nav>
         <div class="sidebar-footer">
             {% if session.get('username') %}
@@ -361,26 +357,23 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
+<<<<<<< HEAD:api/templates/shared/base.html
                         <a href="{{ url_for('home_routes.home') }}" class="navbar-brand">
                             <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}"
                                 alt="YumeAnime Logo" style="height: 40px;">
                             <span>YumeAnime</span>
+=======
+                        <a href="{{ url_for('main.home_routes.home') }}" class="navbar-brand">
+                            <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="Chanime Logo"
+                                style="height: 40px;">
+                            <span>Chanime</span>
+>>>>>>> dcf8a09 (Save my progress before update):api/templates/base.html
                         </a>
                         <p>Your gateway to the best anime and manga experience. Watch anime and read manga — all in one place.</p>
                         <div
                             style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border-color);">
                             <p class="text-sm text-muted" style="margin-bottom: var(--space-sm);">Proudly Open Source.
                                 Join us to build the future of anime streaming.</p>
-                            <a href="https://github.com/OTAKUWeBer/YumeAnime" target="_blank"
-                                class="btn btn-sm btn-secondary">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
-                                </svg>
-                                Star on GitHub
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -417,7 +410,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ now().year if now else 2026 }} YumeAnime. All rights reserved.</p>
+                <p>&copy; {{ now().year if now else 2026 }} Chanime. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -647,8 +640,13 @@
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
+<<<<<<< HEAD:api/templates/shared/base.html
             <h2 class="welcome-popup-title">Welcome to YumeAnime ✨</h2>
 
+=======
+            <h2 class="welcome-popup-title">Welcome to Chanime ✨</h2>
+            
+>>>>>>> dcf8a09 (Save my progress before update):api/templates/base.html
             <div class="welcome-popup-card">
                 <div class="welcome-popup-card-header">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="welcome-icon comment-icon">
