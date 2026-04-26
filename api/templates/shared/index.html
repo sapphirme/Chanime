@@ -92,7 +92,7 @@ series.{% endblock %}
 
                         <div class="spotlight-actions">
                             <a href="/watch/{{ anime.id }}" class="btn btn-primary btn-lg">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <svg width="20" height="10" viewBox="0 0 24 24" fill="currentColor">
                                     <polygon points="5 3 19 12 5 21 5 3" />
                                 </svg>
                                 Watch Now
@@ -320,37 +320,34 @@ series.{% endblock %}
                     </svg>
                     Newest
                 </h2>
-                <div class="sidebar-list">
-                    {% for anime in suggestions.data.latestEpisodeAnimes[:10] %}
-                    <a href="/watch/{{ anime.id }}" class="sidebar-anime-card">
-                        <div class="sidebar-anime-poster">
-                            <img src="{{ anime.poster or anime.image }}" alt="{{ anime.name or anime.title }}"
-                                loading="lazy">
-                        </div>
-                        <div class="sidebar-anime-info">
-                            <div class="sidebar-anime-title" title="{{ anime.name or anime.title }}">{{ anime.name or
-                                anime.title }}</div>
-                            <div class="sidebar-anime-meta">
-                                {% if anime.episodes and anime.episodes.sub %}
-                                <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <rect x="2" y="3" width="20" height="18" rx="2" ry="2" />
-                                        <line x1="8" y1="21" x2="8" y2="3" />
-                                        <line x1="16" y1="21" x2="16" y2="3" />
-                                    </svg> {{ anime.episodes.sub }}</span>
-                                {% endif %}
-                                {% if anime.type %}
-                                <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <rect x="2" y="2" width="20" height="20" rx="2" ry="2" />
-                                        <line x1="7" y1="2" x2="7" y2="22" />
-                                        <line x1="17" y1="2" x2="17" y2="22" />
-                                    </svg> {{ anime.type }}</span>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </a>
-                    {% endfor %}
+               <div class="sidebar-list">
+    {% for anime in suggestions.data.latestEpisodeAnimes[:10] %}
+    <a href="/watch/{{ anime.id }}" class="t-card sidebar-anime-card">
+        <div class="t-bg" style="background-image: url('{{ anime.poster or anime.image }}');"></div>
+        <div class="t-mask"></div>
+        
+        <div class="t-content">
+            <div class="t-rank {% if loop.index <= 3 %}top-rank{% endif %}">
+                {{ loop.index }}
+            </div>
+            
+            <div class="t-info">
+                <div class="t-title" title="{{ anime.name or anime.title }}">
+                    {{ anime.name or anime.title }}
+                </div>
+                <div class="t-badges">
+                    {% if anime.episodes and anime.episodes.sub %}
+                    <span class="badge badge-sub">SUB {{ anime.episodes.sub }}</span>
+                    {% endif %}
+                    {% if anime.type %}
+                    <span class="badge badge-tv">{{ anime.type }}</span>
+                     {% endif %}
+                         </div>
+                    </div>
+                   </div>
+                  </a>
+                 {% endfor %}
+                 </div>
                 </div>
             </div>
             {% endif %}

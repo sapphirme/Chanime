@@ -727,7 +727,7 @@ h6 {
     position: fixed;
     inset: 0;
     background: var(--bg-primary);
-    z-index: 2000;
+    z-index: 2100;
     padding: var(--space-md);
     overflow-y: auto;
 }
@@ -966,6 +966,14 @@ h6 {
     letter-spacing: 0.05em;
 }
 
+@media (max-width: 640px) {
+    .spotlight-content {
+        padding: var(--space-lg);
+        align-items: flex-end; /* Shifts text to the bottom for better visibility of the artwork */
+        padding-bottom: var(--space-3xl);
+    }
+}
+
 .tab-btn:hover {
     background: rgba(255, 255, 255, 0.05);
     color: var(--text-primary);
@@ -1034,6 +1042,37 @@ h6 {
     gap: 12px;
 }
 
+/* Styling for the rank numbers */
+.sidebar-anime-rank {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #444; /* Muted color for standard ranks */
+    min-width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-sans);
+}
+
+/* Highlight the top 3 with your theme color */
+.sidebar-anime-rank.top-rank {
+    color: var(--primary-color);
+}
+
+/* Adjust the card layout to fit the number */
+.sidebar-anime-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.sidebar-anime-card:hover {
+    transform: translateX(4px);
+}
 .sidebar-anime-card {
     display: flex;
     gap: 14px;
@@ -1102,6 +1141,80 @@ h6 {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+/* Sidebar Card Container */
+.sidebar-list .t-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 84px;
+    background-color: #0a0a0a; /* Match your main dark theme */
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    transition: transform 0.2s;
+}
+
+/* Background Image Positioning */
+.sidebar-list .t-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60%; /* Only show image on the right side */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+/* Gradient Mask to Blend Text and Image */
+.sidebar-list .t-mask {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #0a0a0a 25%, rgba(10, 10, 10, 0.8) 55%, transparent 100%);
+    z-index: 1;
+}
+
+/* Ranking Circle */
+.sidebar-list .t-rank {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin-right: 12px;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.sidebar-list .t-rank.top-rank {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Text Content Area */
+.sidebar-list .t-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 12px;
+}
+
+.sidebar-list .t-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 4px;
 }
 
 /* ============================================
@@ -1319,6 +1432,9 @@ h6 {
     padding: 0;
 }
 
+.spotlight-carousel {
+    touch-action: pan-y; /* Allows vertical scrolling while swiping the carousel */
+}
 /* Base spotlight slide styling */
 .spotlight-slide {
     position: absolute;
@@ -1336,7 +1452,7 @@ h6 {
     position: relative;
     opacity: 1;
     visibility: visible;
-    z-index: 1;
+    z-index: 5;
 }
 
 .spotlight-backdrop {
@@ -1413,8 +1529,8 @@ h6 {
 }
 
 .spotlight-title {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 500;
     margin-bottom: var(--space-md);
     line-height: 1.1;
     color: var(--text-primary);
@@ -1440,7 +1556,7 @@ h6 {
 }
 
 .spotlight-description {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(244, 242, 239, 0.85);
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: var(--space-lg);
@@ -1466,7 +1582,7 @@ h6 {
     border-radius: var(--radius-full);
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(190, 177, 87, 0.9);
     backdrop-filter: blur(4px);
     letter-spacing: 0.02em;
     transition: all 0.2s ease;
@@ -1506,8 +1622,8 @@ h6 {
 
 .spotlight-badge-rating {
     color: var(--warning);
-    border-color: rgba(251, 191, 36, 0.2);
-    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(255, 221, 27, 0.2);
+    background: rgba(255, 195, 43, 0.08);
 }
 
 .spotlight-actions {
@@ -4525,4 +4641,65 @@ h6 {
 .cw-clear-btn:hover {
     color: var(--error);
     background: rgba(239, 68, 68, 0.1);
+}
+
+@media (max-width: 768px) {
+    /* Reduce Spotlight padding to give text more room */
+    .spotlight-content {
+        padding: var(--space-lg);
+        align-items: flex-end; /* Push content to bottom to see more of the banner */
+        padding-bottom: var(--space-2xl);
+    }
+
+    /* Scale down large titles */
+    .spotlight-title {
+        font-size: 1.5rem;
+        -webkit-line-clamp: 2; /* Ensure it stays compact */
+        margin-bottom: var(--space-sm);
+    }
+
+    /* Hide description on very small screens to avoid button overlap */
+    .spotlight-description {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 2;
+        margin-bottom: var(--space-md);
+    }
+
+    /* Scale down the 500px fixed height for mobile */
+    .spotlight-slide {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Increase badge size slightly for legibility on small phones */
+    .badge {
+        font-size: 0.75rem;
+        padding: 3px 8px;
+    }
+
+    /* Tighten section headers */
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    /* Adjust tab buttons to prevent taking up too much vertical space */
+    .tab-btn {
+        padding: 8px 16px;
+        letter-spacing: 0.02em;
+    }
+}
+
+/* Improve contrast for muted text on mobile */
+@media (max-width: 768px) {
+    .text-muted, 
+    .anime-card-meta, 
+    .sidebar-anime-meta {
+        color: #888888; /* Slightly lighter than #666666 for better mobile contrast */
+    }
+}
+
+.sidebar-anime-title {
+    word-break: break-word; /* Prevents long single words from breaking the layout */
+    overflow-wrap: anywhere;
 }

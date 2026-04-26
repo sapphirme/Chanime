@@ -221,3 +221,5 @@ __marimo__/
 
 # Extra files
 api-test.py
+.vercel
+.env*.local
