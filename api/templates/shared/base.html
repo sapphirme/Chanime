@@ -8,11 +8,11 @@
         content="{% block meta_description %}Watch anime online for free in HD quality{% endblock %}">
 
     <!-- Open Graph / Social Media Embeds -->
-    <meta property="og:title" content="{% block og_title %}Chanime - Watch Anime Online{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}chanime - Watch Anime Online{% endblock %}">
     <meta property="og:description"
         content="{% block og_description %}Watch the latest anime online for free in HD. Discover trending, popular, and new anime series.{% endblock %}">
 
-    <title>{% block title %}Chanime{% endblock %}</title>
+    <title>{% block title %}chanime{% endblock %}</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/logo-icon.png') }}?v=3">
     <link rel="apple-touch-icon" sizes="180x180"
         href="{{ url_for('static', filename='images/logos/logo-icon.png') }}?v=3">
@@ -72,16 +72,25 @@
                     </svg>
                 </button>
                 <!-- Brand -->
+<<<<<<< HEAD:api/templates/shared/base.html
                 <a href="{{ url_for('home_routes.home') }}" class="navbar-brand">
                     <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="YumeAnime Logo"
+=======
+                <a href="{{ url_for('main.home_routes.home') }}" class="navbar-brand">
+                    <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="chanime Logo"
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
                         style="height: 40px;">
-                    <span>Chanime</span>
+                    <span>chanime</span>
                 </a>
             </div>
             <!-- Search (Centered) -->
             <div class="search-container">
                 {% set is_manga_page = '/manga' in request.path %}
+<<<<<<< HEAD:api/templates/shared/base.html
                 <form action="{% if is_manga_page %}/manga/search{% else %}{{ url_for('search_routes.search') }}{% endif %}" method="GET" class="search-input-wrapper"
+=======
+                <form action="{% if is_manga_page %}/manga/search{% else %}{{ url_for('main.search_routes.search') }}{% endif %}" method="GET" class="search-input-wrapper"
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
                     id="search-form">
                     {% if is_manga_page %}<input type="hidden" name="source" value="{{ current_source|default('atsumaru') }}">{% endif %}
                     <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -197,7 +206,11 @@
     <div id="mobile-search-overlay" class="mobile-search-overlay hidden">
         <div class="mobile-search-container">
             <div class="mobile-search-header">
+<<<<<<< HEAD:api/templates/shared/base.html
                 <form action="{% if is_manga_page %}/manga/search{% else %}{{ url_for('search_routes.search') }}{% endif %}" method="GET" class="mobile-search-form"
+=======
+                <form action="{% if is_manga_page %}/manga/search{% else %}{{ url_for('main.search_routes.search') }}{% endif %}" method="GET" class="mobile-search-form"
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
                     id="mobile-search-form">
                     {% if is_manga_page %}<input type="hidden" name="source" value="{{ current_source|default('atsumaru') }}">{% endif %}
                     <svg class="mobile-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -238,9 +251,14 @@
                 <span>YumeAnime</span>
 =======
             <a href="{{ url_for('main.home_routes.home') }}" class="sidebar-brand">
+<<<<<<< HEAD:api/templates/shared/base.html
                 <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="Chanime Logo">
                 <span>Chanime</span>
 >>>>>>> dcf8a09 (Save my progress before update):api/templates/base.html
+=======
+                <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="chanime Logo">
+                <span>chanime</span>
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
             </a>
             <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -306,6 +324,7 @@
             </a>
             {% endif %}
             <div class="sidebar-divider"></div>
+            </a>
         </nav>
         <div class="sidebar-footer">
             {% if session.get('username') %}
@@ -364,16 +383,21 @@
                             <span>YumeAnime</span>
 =======
                         <a href="{{ url_for('main.home_routes.home') }}" class="navbar-brand">
+<<<<<<< HEAD:api/templates/shared/base.html
                             <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}" alt="Chanime Logo"
                                 style="height: 40px;">
                             <span>Chanime</span>
 >>>>>>> dcf8a09 (Save my progress before update):api/templates/base.html
+=======
+                            <img src="{{ url_for('static', filename='images/logos/no-bg-logo.png') }}"
+                                alt="chanime Logo" style="height: 40px;">
+                            <span>chanime</span>
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
                         </a>
                         <p>Your gateway to the best anime and manga experience. Watch anime and read manga — all in one place.</p>
                         <div
                             style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border-color);">
-                            <p class="text-sm text-muted" style="margin-bottom: var(--space-sm);">Proudly Open Source.
-                                Join us to build the future of anime streaming.</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -410,7 +434,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{ now().year if now else 2026 }} Chanime. All rights reserved.</p>
+                <p>&copy; {{ now().year if now else 2026 }} chanime. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -442,7 +466,7 @@
                     <div id="login-error" class="text-error text-sm"
                         style="display: none; margin-bottom: var(--space-md);"></div>
                     <!-- Cloudflare Turnstile Widget -->
-                    <div class="cf-turnstile" data-sitekey="{{ config.CF_SITE_KEY }}" data-theme="dark"
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAC9n4DRepjg2LacV" data-theme="dark"
                         data-appearance="always" style="margin-bottom: var(--space-md);"></div>
                     <button type="submit" class="btn btn-primary w-full" id="login-btn">
                         <span id="login-btn-text">Sign In</span>
@@ -488,7 +512,7 @@
                     <div id="signup-error" class="text-error text-sm"
                         style="display: none; margin-bottom: var(--space-md);"></div>
                     <!-- Cloudflare Turnstile Widget -->
-                    <div class="cf-turnstile" data-sitekey="{{ config.CF_SITE_KEY }}" data-theme="dark"
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAC9n4DRepjg2LacV" data-theme="dark"
                         data-appearance="always" style="margin-bottom: var(--space-md);"></div>
                     <button type="submit" class="btn btn-primary w-full" id="signup-btn">
                         <span id="signup-btn-text">Create Account</span>
@@ -641,6 +665,7 @@
                 </svg>
             </button>
 <<<<<<< HEAD:api/templates/shared/base.html
+<<<<<<< HEAD:api/templates/shared/base.html
             <h2 class="welcome-popup-title">Welcome to YumeAnime ✨</h2>
 
 =======
@@ -652,10 +677,26 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="welcome-icon comment-icon">
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+=======
+            <h2 class="welcome-popup-title"> ༘✧Welcome to chanime ✧°📽✧˚</h2>
+
+            <div class="welcome-popup-card">
+                <div class="welcome-popup-card-header">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        class="welcome-icon comment-icon">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                        </path>
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
                     </svg>
                     <h3 class="welcome-popup-card-title comment">Manga is Here!</h3>
                 </div>
+<<<<<<< HEAD:api/templates/shared/base.html
                 <p class="welcome-popup-card-text">We've added a brand new manga section. You can now read your favorite manga seamlessly on YumeAnime.</p>
+=======
+                <p class="welcome-popup-card-text">Comment section added. Users can now comment, like, or dislike
+                    episodes!</p>
+>>>>>>> a1d1a8d (Save my local anime and manga route changes before sync):api/templates/base.html
             </div>
 
             <div class="welcome-popup-card">

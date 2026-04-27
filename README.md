@@ -4,7 +4,7 @@
   <p><strong>Your Ultimate Ad-Free Anime Streaming Experience</strong></p>
   
   <p>
-    <a href="https://yume-animez.vercel.app/home"><strong>⛩️ Chanime</strong></a>
+    <a href="https://chanimee.vercel.app/home"><strong>⛩️ Chanime</strong></a>
   </p>
 
   <p>
